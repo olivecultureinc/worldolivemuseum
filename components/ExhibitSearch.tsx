@@ -1,13 +1,10 @@
 'use client';
 
 import { useMemo, useState, type ChangeEvent } from 'react';
-import ExhibitsGridLightbox from './ExhibitsGridLightbox';
 import type { Exhibit } from '../lib/types';
 
 export default function ExhibitSearch({ exhibits }: { exhibits: Exhibit[] }) {
   const [q, setQ] = useState('');
-  const [active, setActive] = useState<Exhibit | null>(null);
-  const [open, setOpen] = useState(false);
 
   const filtered = useMemo(() => {
     const needle = q.trim().toLowerCase();
@@ -49,11 +46,7 @@ export default function ExhibitSearch({ exhibits }: { exhibits: Exhibit[] }) {
         {filtered.map((ex) => (
           <article
             key={ex.exhibit_slug}
-            className="relative rounded-2xl border overflow-hidden bg-white cursor-pointer"
-            onClick={() => {
-              setActive(ex);
-              setOpen(true);
-            }}
+            className="relative rounded-2xl border overflow-hidden bg-white"
           >
             <img
               src={ex.image}
@@ -68,32 +61,6 @@ export default function ExhibitSearch({ exhibits }: { exhibits: Exhibit[] }) {
           </article>
         ))}
       </div>
-
-      {active && (
-        <ExhibitsGridLightbox
-          open={open}
-          exhibits={filtered}
-          index={filtered.findIndex(
-            (e) => e.exhibit_slug === active.exhibit_slug
-          )}
-          close={() => {
-            setOpen(false);
-            setActive(null);
-          }}
-          goNext={() => {
-            const i = filtered.findIndex(
-              (e) => e.exhibit_slug === active.exhibit_slug
-            );
-            setActive(filtered[(i + 1) % filtered.length]);
-          }}
-          goPrev={() => {
-            const i = filtered.findIndex(
-              (e) => e.exhibit_slug === active.exhibit_slug
-            );
-            setActive(filtered[(i - 1 + filtered.length) % filtered.length]);
-          }}
-        />
-      )}
     </div>
   );
 }
