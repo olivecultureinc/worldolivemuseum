@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------
+   Smooth Scroll (Anchor Navigation)
+--------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---------------------------------------------
+   Global Museum Theme
+--------------------------------------------- */
+body {
+  background: #F3F0EA; /* your museum parchment color */
+  color: #1f2937;      /* gray-800 */
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------------------------------------------
+   Glass Panel (for museum UI and future overlays)
+--------------------------------------------- */
+.glass {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ---------------------------------------------
+   Fade Animations (used for Lightbox + caption panel)
+--------------------------------------------- */
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fade-up 0.6s ease-out forwards;
+}
+
+/* ---------------------------------------------
+   Lightbox-specific base helpers
+--------------------------------------------- */
+
+.lightbox-backdrop {
+  animation: fade-in 0.35s ease-out forwards;
+}
+
+.lightbox-image {
+  animation: fade-in 0.45s ease-out forwards;
+}
+
+.caption-panel {
+  backdrop-filter: blur(14px);
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 12px;
+  padding: 16px 20px;
+  color: white;
+  max-width: 340px;
+  line-height: 1.45;
+  animation: fade-up 0.6s ease-out;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  position: absolute;
+}
+
+.caption-panel::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 24px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid rgba(0, 0, 0, 0.55);
+}

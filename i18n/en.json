@@ -1,0 +1,16 @@
+{
+  "site": {
+    "title": "The Virtual Olive Oil Museum",
+    "tagline": "6,000 years of culture, craft, and taste \u2014 now online.",
+    "cta": "Visit Now \u2014 $5",
+    "why_visit": "Why Visit",
+    "glossary_cta": "New to olive oil? Explore our glossary and tasting guide.",
+    "nav": {
+      "home": "Home",
+      "museum": "Museum",
+      "about": "About",
+      "contact": "Contact",
+      "visit": "Visit for $5"
+    }
+  }
+}

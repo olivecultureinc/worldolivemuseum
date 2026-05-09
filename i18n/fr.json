@@ -1,0 +1,16 @@
+{
+  "site": {
+    "title": "Le Mus\u00e9e Virtuel de l\u2019Huile d\u2019Olive",
+    "tagline": "6 000 ans de culture, de savoir-faire et de go\u00fbt \u2014 en ligne.",
+    "cta": "Visiter \u2014 5 $",
+    "why_visit": "Pourquoi Visiter",
+    "glossary_cta": "Nouveau dans l'huile d'olive ? D\u00e9couvrez notre glossaire et guide de d\u00e9gustation.",
+    "nav": {
+      "home": "Accueil",
+      "museum": "Mus\u00e9e",
+      "about": "\u00c0 propos",
+      "contact": "Contact",
+      "visit": "Visiter pour 5 $"
+    }
+  }
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "1",
+    "slug": "origins-history",
+    "title_en": "Origins & History",
+    "title_fr": "Origines et Histoire",
+    "theme_en": "From myth and ritual to trade and daily life, discover how olive oil shaped early Mediterranean civilizations.",
+    "theme_fr": "De la mythologie et des rituels au commerce et à la vie quotidienne, découvrez comment l’huile d’olive a façonné les premières civilisations méditerranéennes.",
+    "summary_en": "From myth and ritual to trade and daily life, discover how olive oil shaped early Mediterranean civilizations.",
+    "summary_fr": "De la mythologie et des rituels au commerce et à la vie quotidienne, découvrez comment l’huile d’olive a façonné les premières civilisations méditerranéennes.",
+    "hero": "/museum/origins-history/hero/hero.png",
+    "thumbnail": "/museum/origins-history/thumbnails/thumb.png",
+    "hero_image": "/museum/origins-history/hero/hero.png",
+    "thumb_image": "/museum/origins-history/thumbnails/thumb.png"
+  },
+  {
+    "id": "2",
+    "slug": "harvest-milling",
+    "title_en": "Harvest & Milling",
+    "title_fr": "Récolte et Pressage",
+    "theme_en": "Cultivation, harvesting, and oil extraction",
+    "theme_fr": "Culture, récolte et extraction de l'huile",
+    "summary_en": "Cultivation, harvesting, and oil extraction",
+    "summary_fr": "Culture, récolte et extraction de l'huile",
+    "hero": "/museum/harvest-milling/hero/hero.png",
+    "thumbnail": "/museum/harvest-milling/thumbnails/thumb.png",
+    "hero_image": "/museum/harvest-milling/hero/hero.png",
+    "thumb_image": "/museum/harvest-milling/thumbnails/thumb.png"
+  },
+  {
+    "id": "3",
+    "slug": "olive-tree-mediterranean",
+    "title_en": "The Olive Tree in the Mediterranean Sea",
+    "title_fr": "L’Olivier dans le Bassin Méditerranéen",
+    "theme_en": "The olive tree as a cultural & ecological resource",
+    "theme_fr": "L'olivier comme ressource culturelle et écologique",
+    "summary_en": "The olive tree as a cultural & ecological resource",
+    "summary_fr": "L'olivier comme ressource culturelle et écologique",
+    "hero": "/museum/olive-tree-mediterranean/hero/hero.png",
+    "thumbnail": "/museum/olive-tree-mediterranean/thumbnails/thumb.png",
+    "hero_image": "/museum/olive-tree-mediterranean/hero/hero.png",
+    "thumb_image": "/museum/olive-tree-mediterranean/thumbnails/thumb.png"
+  },
+  {
+    "id": "4",
+    "slug": "everyday-life-industry",
+    "title_en": "Everyday Life & Industry",
+    "title_fr": "Vie Quotidienne et Industrie",
+    "theme_en": "Practical & industrial applications of olive oil and by-products",
+    "theme_fr": "Applications pratiques et industrielles de l'huile d'olive et de ses sous-produits",
+    "summary_en": "Practical & industrial applications of olive oil and by-products",
+    "summary_fr": "Applications pratiques et industrielles de l'huile d'olive et de ses sous-produits",
+    "hero": "/museum/everyday-life-industry/hero/hero.png",
+    "thumbnail": "/museum/everyday-life-industry/thumbnails/thumb.png",
+    "hero_image": "/museum/everyday-life-industry/hero/hero.png",
+    "thumb_image": "/museum/everyday-life-industry/thumbnails/thumb.png"
+  },
+  {
+    "id": "5",
+    "slug": "tasting-sensory-bar",
+    "title_en": "Tasting & Sensory Bar",
+    "title_fr": "Bar Sensoriel et Dégustation",
+    "theme_en": "Experiencing olive oil through the senses",
+    "theme_fr": "Découverte sensorielle de l'huile d'olive",
+    "summary_en": "Experiencing olive oil through the senses",
+    "summary_fr": "Découverte sensorielle de l'huile d'olive",
+    "hero": "/museum/tasting-sensory-bar/hero/hero.png",
+    "thumbnail": "/museum/tasting-sensory-bar/thumbnails/thumb.png",
+    "hero_image": "/museum/tasting-sensory-bar/hero/hero.png",
+    "thumb_image": "/museum/tasting-sensory-bar/thumbnails/thumb.png"
+  }
+]

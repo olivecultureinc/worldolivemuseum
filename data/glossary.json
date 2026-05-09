@@ -1,0 +1,93 @@
+[
+  {
+    "category": "production",
+    "category_en": "Production & Milling",
+    "category_fr": "Production et extraction",
+    "terms": [
+      {
+        "slug": "malaxation",
+        "term_en": "Malaxation",
+        "term_fr": "Malaxage",
+        "definition_en": "The slow churning of olive paste after crushing, allowing microscopic oil droplets to merge into larger droplets for efficient extraction.",
+        "definition_fr": "Processus de brassage lent de la pâte d’olive après le broyage, permettant aux microgouttelettes d’huile de se regrouper pour faciliter l’extraction."
+      },
+      {
+        "slug": "cold-extraction",
+        "term_en": "Cold Extraction",
+        "term_fr": "Extraction à froid",
+        "definition_en": "Mechanical extraction of olive oil performed at temperatures below 27°C to preserve aroma, flavor, and nutritional compounds.",
+        "definition_fr": "Extraction mécanique de l’huile d’olive réalisée à une température inférieure à 27°C afin de préserver les arômes, les saveurs et les composés nutritionnels."
+      },
+      {
+        "slug": "centrifugation",
+        "term_en": "Centrifugation",
+        "term_fr": "Centrifugation",
+        "definition_en": "A mechanical separation process using centrifugal force to separate oil from water and solid olive matter.",
+        "definition_fr": "Procédé mécanique utilisant la force centrifuge pour séparer l’huile de l’eau et des matières solides issues de l’olive."
+      }
+    ]
+  },
+  {
+    "category": "quality",
+    "category_en": "Quality & Composition",
+    "category_fr": "Qualité et composition",
+    "terms": [
+      {
+        "slug": "extra-virgin-olive-oil",
+        "term_en": "Extra Virgin Olive Oil (EVOO)",
+        "term_fr": "Huile d’olive extra vierge",
+        "definition_en": "The highest grade of olive oil, obtained solely by mechanical means, with free acidity below 0.8% and no sensory defects.",
+        "definition_fr": "La catégorie la plus élevée d’huile d’olive, obtenue uniquement par procédés mécaniques, avec une acidité libre inférieure à 0,8 % et sans défaut sensoriel."
+      },
+      {
+        "slug": "polyphenols",
+        "term_en": "Polyphenols",
+        "term_fr": "Polyphénols",
+        "definition_en": "Natural antioxidant compounds found in olive oil that contribute to bitterness, pungency, stability, and potential health benefits.",
+        "definition_fr": "Composés antioxydants naturels présents dans l’huile d’olive, contribuant à l’amertume, au piquant, à la stabilité et aux bénéfices potentiels pour la santé."
+      }
+    ]
+  },
+  {
+    "category": "sensory",
+    "category_en": "Sensory Analysis",
+    "category_fr": "Analyse sensorielle",
+    "terms": [
+      {
+        "slug": "fruity",
+        "term_en": "Fruity",
+        "term_fr": "Fruitée",
+        "definition_en": "A positive sensory attribute describing fresh olive aromas reminiscent of green or ripe fruit.",
+        "definition_fr": "Attribut sensoriel positif décrivant des arômes d’olive fraîche rappelant le fruit vert ou mûr."
+      },
+      {
+        "slug": "rancid",
+        "term_en": "Rancid",
+        "term_fr": "Rance",
+        "definition_en": "A sensory defect resulting from oxidation, producing stale or degraded aromas.",
+        "definition_fr": "Défaut sensoriel résultant de l’oxydation, produisant des arômes altérés ou dégradés."
+      }
+    ]
+  },
+  {
+    "category": "culture",
+    "category_en": "Culture & History",
+    "category_fr": "Culture et histoire",
+    "terms": [
+      {
+        "slug": "olea-europaea",
+        "term_en": "Olea Europaea",
+        "term_fr": "Olea europaea",
+        "definition_en": "The botanical name of the cultivated olive tree species native to the Mediterranean basin.",
+        "definition_fr": "Nom botanique de l’espèce d’olivier cultivée originaire du bassin méditerranéen."
+      },
+      {
+        "slug": "amphora",
+        "term_en": "Amphora",
+        "term_fr": "Amphore",
+        "definition_en": "Ancient ceramic vessel used for storing and transporting olive oil throughout classical Mediterranean civilizations.",
+        "definition_fr": "Récipient en céramique antique utilisé pour stocker et transporter l’huile d’olive dans les civilisations méditerranéennes classiques."
+      }
+    ]
+  }
+]
