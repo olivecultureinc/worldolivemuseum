@@ -43,7 +43,7 @@ export default function ExhibitSearch({ exhibits }: { exhibits: Exhibit[] }) {
       <div className="grid md:grid-cols-2 gap-6">
         {filtered.map((ex) => (
           <article
-            key={ex.slug}
+            key={ex.exhibit_slug}
             className="relative rounded-2xl border overflow-hidden bg-white cursor-pointer"
             onClick={() => {
               setActive(ex);
