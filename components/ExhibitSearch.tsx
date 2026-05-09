@@ -1,8 +1,8 @@
 'use client';
-import { useMemo, useState, type ChangeEvent } from 'react';
-import ExhibitsGridLightbox from './ExhibitsGridLightbox';   // ✅ FIXED
 
-import type { Exhibit } from '../lib/types';                 // ✅ optional but recommended
+import { useMemo, useState, type ChangeEvent } from 'react';
+import ExhibitsGridLightbox from './ExhibitsGridLightbox';
+import type { Exhibit } from '../lib/types';
 
 export default function ExhibitSearch({ exhibits }: { exhibits: Exhibit[] }) {
   const [q, setQ] = useState('');
@@ -11,9 +11,13 @@ export default function ExhibitSearch({ exhibits }: { exhibits: Exhibit[] }) {
 
   const filtered = useMemo(() => {
     const needle = q.trim().toLowerCase();
+
     if (!needle) return exhibits;
+
     return exhibits.filter((ex) =>
-      (`${ex.exhibit_title_en} ${ex.short_desc_en}`.toLowerCase()).includes(needle)
+      (`${ex.exhibit_title_en} ${ex.short_desc_en}`.toLowerCase()).includes(
+        needle
+      )
     );
   }, [q, exhibits]);
 
@@ -30,6 +34,7 @@ export default function ExhibitSearch({ exhibits }: { exhibits: Exhibit[] }) {
           placeholder="Search exhibits…"
           className="w-full md:w-80 px-3 py-2 rounded-lg border bg-white/70"
         />
+
         {q && (
           <button
             onClick={() => setQ('')}
@@ -52,12 +57,13 @@ export default function ExhibitSearch({ exhibits }: { exhibits: Exhibit[] }) {
           >
             <img
               src={ex.image}
-              alt={ex.title_en}
+              alt={ex.exhibit_title_en}
               className="w-full h-56 object-cover bg-neutral-100"
             />
+
             <div className="p-4">
-              <h2 className="font-semibold">{ex.title_en}</h2>
-              <p className="text-sm opacity-80 mt-2">{ex.description_en}</p>
+              <h2 className="font-semibold">{ex.exhibit_title_en}</h2>
+              <p className="text-sm opacity-80 mt-2">{ex.short_desc_en}</p>
             </div>
           </article>
         ))}
@@ -67,17 +73,23 @@ export default function ExhibitSearch({ exhibits }: { exhibits: Exhibit[] }) {
         <ExhibitsGridLightbox
           open={open}
           exhibits={filtered}
-          index={filtered.findIndex((e) => e.slug === active.slug)}
+          index={filtered.findIndex(
+            (e) => e.exhibit_slug === active.exhibit_slug
+          )}
           close={() => {
             setOpen(false);
             setActive(null);
           }}
           goNext={() => {
-            const i = filtered.findIndex((e) => e.slug === active.slug);
+            const i = filtered.findIndex(
+              (e) => e.exhibit_slug === active.exhibit_slug
+            );
             setActive(filtered[(i + 1) % filtered.length]);
           }}
           goPrev={() => {
-            const i = filtered.findIndex((e) => e.slug === active.slug);
+            const i = filtered.findIndex(
+              (e) => e.exhibit_slug === active.exhibit_slug
+            );
             setActive(filtered[(i - 1 + filtered.length) % filtered.length]);
           }}
         />
@@ -85,4 +97,3 @@ export default function ExhibitSearch({ exhibits }: { exhibits: Exhibit[] }) {
     </div>
   );
 }
-
