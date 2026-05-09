@@ -1,41 +1,41 @@
 import { NextRequest, NextResponse } from "next/server";
-import { stripe } from "../../../utils/stripe";
+import Stripe from "stripe";
 
-export const config = { api: { bodyParser: false } };
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
+  apiVersion: "2023-10-16",
+});
+
+export const runtime = "nodejs";
 
 export async function POST(req: NextRequest) {
-  const sig = req.headers.get("stripe-signature") || "";
-  const raw = await req.text();
+  const signature = req.headers.get("stripe-signature");
+
+  if (!signature) {
+    return NextResponse.json(
+      { error: "Missing Stripe signature" },
+      { status: 400 }
+    );
+  }
+
+  const body = await req.text();
 
   try {
-    const evt = stripe.webhooks.constructEvent(
-      raw,
-      sig,
+    const event = stripe.webhooks.constructEvent(
+      body,
+      signature,
       process.env.STRIPE_WEBHOOK_SECRET as string
     );
 
-    if (evt.type === "checkout.session.completed") {
-      const session = evt.data.object as any;
-
-      console.log("Checkout completed:", session.id);
-
-      // 🔐 Secure internal call to grant pass
-      const baseUrl =
-        process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-
-      await fetch(`${baseUrl}/api/pass/grant`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-internal-key": process.env.INTERNAL_GRANT_SECRET as string,
-        },
-      });
+    if (event.type === "checkout.session.completed") {
+      console.log("Payment completed:", event.id);
     }
 
     return NextResponse.json({ received: true });
-  } catch (err: any) {
-    return new NextResponse(`Webhook Error: ${err.message}`, {
-      status: 400,
-    });
+  } catch (err) {
+    console.error("Webhook error:", err);
+    return NextResponse.json(
+      { error: "Webhook verification failed" },
+      { status: 400 }
+    );
   }
 }
