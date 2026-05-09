@@ -7,10 +7,12 @@ import ExhibitsFullscreenLightbox from "./ExhibitsFullscreenLightbox";
 type Props = {
   exhibits: Exhibit[];
   lang: string;
-  roomTitle: string; // ✅ NEW
+  roomTitle: string;
 };
 
-export default function ExhibitsGridLightbox({ exhibits, lang, roomTitle }: Props) {
+export default function ExhibitsGridLightbox({
+  exhibits,
+}: Props) {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
@@ -29,7 +31,6 @@ export default function ExhibitsGridLightbox({ exhibits, lang, roomTitle }: Prop
 
   return (
     <>
-      {/* GRID */}
       <div className="grid md:grid-cols-2 gap-6">
         {exhibits.map((ex, i) => (
           <article
@@ -38,10 +39,11 @@ export default function ExhibitsGridLightbox({ exhibits, lang, roomTitle }: Prop
             onClick={() => openLightbox(i)}
           >
             <img
-              src={ex.image_preview}
+              src={ex.image_preview || ex.image}
               alt={ex.title}
               className="w-full h-72 object-contain bg-gray-50 p-6 rounded-2xl"
             />
+
             <div className="p-4">
               <h2 className="font-semibold">{ex.title}</h2>
               <p className="text-sm opacity-70">{ex.desc}</p>
@@ -50,17 +52,12 @@ export default function ExhibitsGridLightbox({ exhibits, lang, roomTitle }: Prop
         ))}
       </div>
 
-      {/* LIGHTBOX */}
       {open && (
         <ExhibitsFullscreenLightbox
-          Open={open}
           exhibit={exhibits[index]}
-          Close={close}
+          close={close}
           goNext={goNext}
           goPrev={goPrev}
-          currentIndex={index}
-          total={exhibits.length}
-          roomTitle={roomTitle} // ✅ NEW
         />
       )}
     </>
