@@ -10,9 +10,7 @@ type Props = {
   roomTitle: string;
 };
 
-export default function ExhibitsGridLightbox({
-  exhibits,
-}: Props) {
+export default function ExhibitsGridLightbox({ exhibits }: Props) {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
@@ -21,7 +19,7 @@ export default function ExhibitsGridLightbox({
     setOpen(true);
   };
 
-  const close = () => setOpen(false);
+  const closeLightbox = () => setOpen(false);
 
   const goNext = () =>
     setIndex((prev) => (prev + 1) % exhibits.length);
@@ -54,10 +52,13 @@ export default function ExhibitsGridLightbox({
 
       {open && (
         <ExhibitsFullscreenLightbox
+          Open={open}
           exhibit={exhibits[index]}
-          close={close}
+          Close={closeLightbox}
           goNext={goNext}
           goPrev={goPrev}
+          currentIndex={index}
+          total={exhibits.length}
         />
       )}
     </>
