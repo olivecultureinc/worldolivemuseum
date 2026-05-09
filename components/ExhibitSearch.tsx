@@ -13,7 +13,7 @@ export default function ExhibitSearch({ exhibits }: { exhibits: Exhibit[] }) {
     const needle = q.trim().toLowerCase();
     if (!needle) return exhibits;
     return exhibits.filter((ex) =>
-      (`${ex.title_en} ${ex.description_en}`.toLowerCase()).includes(needle)
+      (`${ex.exhibit_title_en} ${ex.short_desc_en}`.toLowerCase()).includes(needle)
     );
   }, [q, exhibits]);
 
